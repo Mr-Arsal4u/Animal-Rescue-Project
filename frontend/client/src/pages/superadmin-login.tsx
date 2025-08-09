@@ -22,7 +22,7 @@ export default function SuperAdminLogin() {
     setError("");
 
     try {
-      const response = await fetch("/api/superadmin/login", {
+      const response = await fetch("http://localhost:8000/api/superadmin/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

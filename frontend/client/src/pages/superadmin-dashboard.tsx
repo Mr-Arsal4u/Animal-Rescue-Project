@@ -7,7 +7,7 @@ import { fadeInUp, staggerContainer } from "@/lib/animations";
 export default function SuperAdminDashboard() {
   const handleLogout = async () => {
     try {
-      await fetch("/api/superadmin/logout", {
+      await fetch("http://localhost:8000/api/superadmin/logout", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
