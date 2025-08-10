@@ -36,6 +36,11 @@ class Doctor extends Model
         return asset('images/default-doctor.svg');
     }
 
+    public function getExperienceAttribute()
+    {
+        return $this->experience_years;
+    }
+
     public function scopeActive($query)
     {
         return $query->where('status', 'active');

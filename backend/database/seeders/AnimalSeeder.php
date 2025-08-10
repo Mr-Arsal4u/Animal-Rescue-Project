@@ -23,6 +23,7 @@ class AnimalSeeder extends Seeder
                 'size' => 'large',
                 'energy' => 'high',
                 'status' => AnimalStatus::AVAILABLE,
+                'featured' => true,
             ],
             [
                 'name' => 'Whiskers',
@@ -33,6 +34,7 @@ class AnimalSeeder extends Seeder
                 'size' => 'medium',
                 'energy' => 'low',
                 'status' => AnimalStatus::AVAILABLE,
+                'featured' => true,
             ],
             [
                 'name' => 'Polly',
@@ -43,6 +45,7 @@ class AnimalSeeder extends Seeder
                 'size' => 'medium',
                 'energy' => 'medium',
                 'status' => AnimalStatus::NOT_AVAILABLE,
+                'featured' => false,
             ],
             [
                 'name' => 'Hopper',
@@ -53,6 +56,7 @@ class AnimalSeeder extends Seeder
                 'size' => 'small',
                 'energy' => 'medium',
                 'status' => AnimalStatus::AVAILABLE,
+                'featured' => true,
             ],
             [
                 'name' => 'Max',
@@ -63,6 +67,7 @@ class AnimalSeeder extends Seeder
                 'size' => 'large',
                 'energy' => 'high',
                 'status' => AnimalStatus::AVAILABLE,
+                'featured' => false,
             ],
             [
                 'name' => 'Luna',
@@ -73,6 +78,7 @@ class AnimalSeeder extends Seeder
                 'size' => 'medium',
                 'energy' => 'high',
                 'status' => AnimalStatus::AVAILABLE,
+                'featured' => false,
             ],
             [
                 'name' => 'Nibbles',
@@ -83,6 +89,7 @@ class AnimalSeeder extends Seeder
                 'size' => 'small',
                 'energy' => 'high',
                 'status' => AnimalStatus::NOT_AVAILABLE,
+                'featured' => false,
             ],
             [
                 'name' => 'Splash',
@@ -93,6 +100,7 @@ class AnimalSeeder extends Seeder
                 'size' => 'small',
                 'energy' => 'low',
                 'status' => AnimalStatus::AVAILABLE,
+                'featured' => false,
             ],
             [
                 'name' => 'Rocky',
@@ -103,6 +111,7 @@ class AnimalSeeder extends Seeder
                 'size' => 'medium',
                 'energy' => 'low',
                 'status' => AnimalStatus::AVAILABLE,
+                'featured' => false,
             ],
             [
                 'name' => 'Shadow',
@@ -113,6 +122,7 @@ class AnimalSeeder extends Seeder
                 'size' => 'large',
                 'energy' => 'medium',
                 'status' => AnimalStatus::AVAILABLE,
+                'featured' => false,
             ],
         ];
 

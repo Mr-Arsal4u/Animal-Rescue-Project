@@ -19,7 +19,14 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => [env('FRONTEND_URL', 'http://localhost:5000')],
+    'allowed_origins' => [
+        'http://localhost:5000',     // Your frontend origin
+        'http://localhost:3000',     // React dev server
+        'http://localhost:5173',     // Vite dev server
+        'http://localhost:8000',     // Laravel dev server
+        'http://127.0.0.1:5000',    // Alternative localhost format
+        'http://127.0.0.1:3000',    // Alternative localhost format
+    ],
 
     'allowed_origins_patterns' => [],
 

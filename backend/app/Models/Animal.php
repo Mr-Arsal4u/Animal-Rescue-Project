@@ -20,11 +20,13 @@ class Animal extends Model
         'energy',
         'image',
         'status',
+        'featured',
     ];
 
     protected $casts = [
         'status' => AnimalStatus::class,
         'age' => 'integer',
+        'featured' => 'boolean',
     ];
 
     public function getStatusColorAttribute(): string
@@ -43,5 +45,10 @@ class Animal extends Model
             return asset('storage/' . $this->image);
         }
         return null;
+    }
+
+    public function scopeFeatured($query)
+    {
+        return $query->where('featured', true);
     }
 }
