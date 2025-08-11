@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SuccessStoriesController;
 
 // Root path for backend home page
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
@@ -11,11 +12,9 @@ Route::get('/superadmin/login', function () {
 });
 
 // Frontend routes
-Route::get('/stories', [App\Http\Controllers\StoriesController::class, 'index']);
+Route::get('/stories', [SuccessStoriesController::class, 'index']);
 
-Route::get('/process', [App\Http\Controllers\ProcessController::class, 'index']);
-
-Route::get('/animals', [App\Http\Controllers\AnimalsController::class, 'index']);
+Route::get('/animals', [App\Http\Controllers\AnimalsController::class, 'index'])->name('animals.index');
 
 // Animal details page route
 Route::get('/animals/{animal}', [App\Http\Controllers\AnimalsController::class, 'show'])->name('animals.show');
@@ -34,6 +33,10 @@ Route::get('/consultations/create', [App\Http\Controllers\ConsultationController
 Route::post('/consultations', [App\Http\Controllers\ConsultationController::class, 'store'])->name('consultations.store');
 // Book Appointment page route
 Route::get('/appointments/create', [App\Http\Controllers\AppointmentController::class, 'create'])->name('appointments.create');
+
+// Adoption routes
+Route::get('/adoption/{animal}/create', [App\Http\Controllers\AdoptionRequestController::class, 'create'])->name('adoption.create');
+Route::post('/adoption/{animal}', [App\Http\Controllers\AdoptionRequestController::class, 'store'])->name('adoption.store');
 
 // Route::get('/admin/adoption-requests', [App\Http\Controllers\AdoptionRequestsController::class, 'index']);
 

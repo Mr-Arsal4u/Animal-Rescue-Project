@@ -51,4 +51,9 @@ class Animal extends Model
     {
         return $query->where('featured', true);
     }
+
+    public function adoptionRequests()
+    {
+        return $this->hasMany(AdoptionRequest::class);
+    }
 }

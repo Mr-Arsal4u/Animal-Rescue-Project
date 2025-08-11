@@ -149,6 +149,62 @@
                         </div>
 
                         <div>
+                            <label for="adopter_age" class="block text-sm font-semibold text-gray-700 mb-2">
+                                Age *
+                            </label>
+                            <input
+                                type="number"
+                                id="adopter_age"
+                                name="adopter_age"
+                                value="{{ old('adopter_age') }}"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent @error('adopter_age') border-red-500 @enderror"
+                                placeholder="Enter your age"
+                                min="18"
+                                required
+                            />
+                            @error('adopter_age')
+                                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                            @enderror
+                        </div>
+
+                        <div>
+                            <label for="adopter_occupation" class="block text-sm font-semibold text-gray-700 mb-2">
+                                Occupation *
+                            </label>
+                            <input
+                                type="text"
+                                id="adopter_occupation"
+                                name="adopter_occupation"
+                                value="{{ old('adopter_occupation') }}"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent @error('adopter_occupation') border-red-500 @enderror"
+                                placeholder="Enter your occupation"
+                                required
+                            />
+                            @error('adopter_occupation')
+                                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                            @enderror
+                        </div>
+
+                        <div>
+                            <label for="adopter_family_size" class="block text-sm font-semibold text-gray-700 mb-2">
+                                Family Size *
+                            </label>
+                            <input
+                                type="number"
+                                id="adopter_family_size"
+                                name="adopter_family_size"
+                                value="{{ old('adopter_family_size') }}"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent @error('adopter_family_size') border-red-500 @enderror"
+                                placeholder="Number of people in your household"
+                                min="1"
+                                required
+                            />
+                            @error('adopter_family_size')
+                                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                            @enderror
+                        </div>
+
+                        <div>
                             <label for="adopter_address" class="block text-sm font-semibold text-gray-700 mb-2">
                                 Address *
                             </label>
@@ -189,17 +245,50 @@
                         </div>
 
                         <div>
-                            <label for="adopter_experience" class="block text-sm font-semibold text-gray-700 mb-2">
-                                What experience do you have with pets? *
+                            <label for="adopter_commitment" class="block text-sm font-semibold text-gray-700 mb-2">
+                                How do you plan to commit to {{ $animal->name }}'s care? *
                             </label>
                             <textarea
-                                id="adopter_experience"
-                                name="adopter_experience"
-                                rows="3"
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent @error('adopter_experience') border-red-500 @enderror"
-                                placeholder="Describe your experience with pets..."
+                                id="adopter_commitment"
+                                name="adopter_commitment"
+                                rows="4"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent @error('adopter_commitment') border-red-500 @enderror"
+                                placeholder="Describe your commitment to providing long-term care..."
                                 required
-                            >{{ old('adopter_experience') }}</textarea>
+                            >{{ old('adopter_commitment') }}</textarea>
+                            @error('adopter_commitment')
+                                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                            @enderror
+                        </div>
+
+                        <div>
+                            <label for="adopter_experience" class="block text-sm font-semibold text-gray-700 mb-2">
+                                Do you have experience with pets? *
+                            </label>
+                            <div class="flex items-center space-x-4">
+                                <label class="flex items-center">
+                                    <input
+                                        type="radio"
+                                        name="adopter_experience"
+                                        value="1"
+                                        {{ old('adopter_experience') == '1' ? 'checked' : '' }}
+                                        class="mr-2 text-primary border-gray-300 focus:ring-primary"
+                                        required
+                                    />
+                                    Yes
+                                </label>
+                                <label class="flex items-center">
+                                    <input
+                                        type="radio"
+                                        name="adopter_experience"
+                                        value="0"
+                                        {{ old('adopter_experience') == '0' ? 'checked' : '' }}
+                                        class="mr-2 text-primary border-gray-300 focus:ring-primary"
+                                        required
+                                    />
+                                    No
+                                </label>
+                            </div>
                             @error('adopter_experience')
                                 <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                             @enderror
