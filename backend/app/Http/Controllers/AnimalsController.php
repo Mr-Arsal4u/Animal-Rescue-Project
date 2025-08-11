@@ -10,7 +10,7 @@ class AnimalsController extends Controller
 {
     public function index()
     {
-        $animals = Animal::where('status', AnimalStatus::AVAILABLE)
+        $animals = Animal::where('status', AnimalStatus::AVAILABLE->value)
             ->orderBy('created_at', 'desc')
             ->paginate(12);
 
@@ -19,6 +19,9 @@ class AnimalsController extends Controller
 
     public function show(Animal $animal)
     {
+        if (!$animal) {
+            abort(404, 'Animal not found');
+        }
         return view('animals.show', compact('animal'));
     }
 }

@@ -175,9 +175,11 @@ class AdoptionRequestResource extends Resource
                     ->searchable(),
                 
                 BadgeColumn::make('adopter_experience')
-                    ->boolean()
-                    ->trueColor('success')
-                    ->falseColor('danger'),
+                    ->colors([
+                        'success' => fn ($state) => $state,
+                        'danger' => fn ($state) => !$state,
+                    ])
+                    ->formatStateUsing(fn ($state) => $state ? 'Experienced' : 'No Experience'),
                 
                 TextColumn::make('adopter_housing_type')
                     ->badge()

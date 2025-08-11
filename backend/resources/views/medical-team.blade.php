@@ -112,7 +112,7 @@
                             </div>
                         </div>
 
-                        <button class="w-full border border-primary text-primary py-2 px-4 rounded-lg hover:bg-primary hover:text-white transition-colors">
+                        <button class="w-full border border-primary text-primary py-2 px-4 rounded-lg hover:bg-primary hover:text-white transition-colors" onclick="window.location='{{ route('consultations.create') }}'">
                             <i class="fas fa-stethoscope mr-2"></i>
                             Book Consultation
                         </button>
@@ -173,7 +173,7 @@
                             </div>
                         </div>
 
-                        <button class="w-full border border-primary text-primary py-2 px-4 rounded-lg hover:bg-primary hover:text-white transition-colors">
+                        <button class="w-full border border-primary text-primary py-2 px-4 rounded-lg hover:bg-primary hover:text-white transition-colors" onclick="window.location='{{ route('consultations.create') }}'">
                             <i class="fas fa-stethoscope mr-2"></i>
                             Book Consultation
                         </button>
@@ -234,7 +234,7 @@
                             </div>
                         </div>
 
-                        <button class="w-full border border-primary text-primary py-2 px-4 rounded-lg hover:bg-primary hover:text-white transition-colors">
+                        <button class="w-full border border-primary text-primary py-2 px-4 rounded-lg hover:bg-primary hover:text-white transition-colors" onclick="window.location='{{ route('consultations.create') }}'">
                             <i class="fas fa-stethoscope mr-2"></i>
                             Book Consultation
                         </button>
