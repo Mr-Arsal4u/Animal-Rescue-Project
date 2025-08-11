@@ -317,13 +317,15 @@
                                     <p class="text-gray-700 mb-6 leading-relaxed">
                                         {{ $story->story }}
                                     </p>
-
-                                    @if($story->stats && is_array($story->stats))
+                                    
+                                   @if($story->stats && is_array($story->stats))
                                         <div class="space-y-3 mb-6">
                                             @foreach($story->stats as $stat)
                                                 <div class="flex items-center space-x-2">
                                                     <div class="w-2 h-2 bg-primary rounded-full"></div>
-                                                    <span class="text-sm text-gray-700 font-medium">{{ $stat }}</span>
+                                                    <span class="text-sm text-gray-700 font-medium">
+                                                        {{ is_array($stat) ? $stat['stat'] : $stat }}
+                                                    </span>
                                                 </div>
                                             @endforeach
                                         </div>
