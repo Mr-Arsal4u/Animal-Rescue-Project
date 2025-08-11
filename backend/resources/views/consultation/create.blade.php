@@ -268,6 +268,22 @@
                             @enderror
                         </div>
 
+                        @if(request('doctor') || request('specialization'))
+                        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+                            <h4 class="font-semibold text-blue-800 mb-2">Preferred Doctor Information</h4>
+                            @if(request('doctor'))
+                            <p class="text-blue-700 text-sm mb-1">
+                                <strong>Doctor:</strong> {{ request('doctor') }}
+                            </p>
+                            @endif
+                            @if(request('specialization'))
+                            <p class="text-blue-700 text-sm">
+                                <strong>Specialization:</strong> {{ request('specialization') }}
+                            </p>
+                            @endif
+                        </div>
+                        @endif
+
                         <div>
                             <label for="symptoms_description" class="block text-sm font-semibold text-gray-700 mb-2">
                                 Symptoms/Reason for Consultation *

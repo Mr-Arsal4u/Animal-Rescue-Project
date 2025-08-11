@@ -148,7 +148,7 @@
                     <h3 class="text-xl font-bold text-gray-800 mb-2">{{ $service['title'] }}</h3>
                     <p class="text-gray-600 mb-4">{{ $service['description'] }}</p>
                     <div class="text-2xl font-bold text-primary mb-3">{{ $service['price'] }}</div>
-                    <a href="/medical-services" class="w-full bg-primary text-white py-2 px-4 rounded-lg hover:bg-orange-600 transition-colors inline-block text-center">
+                    <a href="{{ route('appointments.create') }}?service={{ urlencode($service['title']) }}" class="w-full bg-primary text-white py-2 px-4 rounded-lg hover:bg-orange-600 transition-colors inline-block text-center">
                         Book Appointment
                     </a>
                 </div>
@@ -234,7 +234,7 @@
                     <h3 class="text-xl font-bold text-gray-800 mb-2">{{ $doctor->name }}</h3>
                     <p class="text-primary font-semibold mb-4">{{ $doctor->specialization }}</p>
                     <p class="text-sm text-gray-600 mb-4">{{ $doctor->experience }} years experience • {{ $doctor->qualifications }}</p>
-                    <a href="/medical-services" class="w-full border border-primary text-primary py-2 px-4 rounded-lg hover:bg-primary hover:text-white transition-colors inline-block text-center">
+                    <a href="{{ route('consultations.create') }}?doctor={{ urlencode($doctor->name) }}&specialization={{ urlencode($doctor->specialization) }}" class="w-full border border-primary text-primary py-2 px-4 rounded-lg hover:bg-primary hover:text-white transition-colors inline-block text-center">
                         Book Consultation
                     </a>
                 </div>

@@ -133,7 +133,7 @@
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
                             <label for="service_type" class="block text-sm font-semibold text-gray-700 mb-2">Service Type *</label>
-                            <input type="text" id="service_type" name="service_type" value="{{ old('service_type') }}" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent @error('service_type') border-red-500 @enderror" placeholder="e.g. Vaccination, Surgery" required />
+                            <input type="text" id="service_type" name="service_type" value="{{ request('service', old('service_type')) }}" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent @error('service_type') border-red-500 @enderror" placeholder="e.g. Vaccination, Surgery" required />
                         </div>
                         <div>
                             <label for="doctor_id" class="block text-sm font-semibold text-gray-700 mb-2">Preferred Doctor *</label>

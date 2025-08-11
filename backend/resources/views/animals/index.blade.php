@@ -62,21 +62,57 @@
     <div class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4">
             <!-- Filter and Search -->
-            <div class="mb-8 flex flex-col md:flex-row gap-4 justify-between items-center">
-                <div class="text-gray-600">
-                    Showing {{ $animals->firstItem() ?? 0 }} to {{ $animals->lastItem() ?? 0 }} of {{ $animals->total() }} animals
-                </div>
-                <div class="flex gap-2">
-                    <input type="text" placeholder="Search animals..." class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
-                    <select class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
-                        <option value="">All Types</option>
-                        <option value="dog">Dogs</option>
-                        <option value="cat">Cats</option>
-                        <option value="bird">Birds</option>
-                        <option value="rabbit">Rabbits</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
+            <div class="mb-8">
+                <form method="GET" action="{{ route('animals.index') }}" class="flex flex-col md:flex-row gap-4 justify-between items-center">
+                    <div class="text-gray-600">
+                        Showing {{ $animals->firstItem() ?? 0 }} to {{ $animals->lastItem() ?? 0 }} of {{ $animals->total() }} animals
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <input 
+                            type="text" 
+                            name="search" 
+                            value="{{ request('search') }}"
+                            placeholder="Search animals..." 
+                            class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                        >
+                        <select 
+                            name="category" 
+                            class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                        >
+                            <option value="">All Types</option>
+                            @foreach($animalTypes as $type)
+                                <option value="{{ $type }}" {{ request('category') == $type ? 'selected' : '' }}>
+                                    {{ ucfirst($type) }}s
+                                </option>
+                            @endforeach
+                        </select>
+                        <select 
+                            name="age" 
+                            class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                        >
+                            <option value="">All Ages</option>
+                            <option value="young" {{ request('age') == 'young' ? 'selected' : '' }}>Young (0-2 years)</option>
+                            <option value="adult" {{ request('age') == 'adult' ? 'selected' : '' }}>Adult (3-8 years)</option>
+                            <option value="senior" {{ request('age') == 'senior' ? 'selected' : '' }}>Senior (9+ years)</option>
+                        </select>
+                        <button 
+                            type="submit" 
+                            class="px-6 py-2 bg-primary text-white rounded-lg hover:bg-orange-600 transition-colors"
+                        >
+                            <i class="fas fa-search mr-2"></i>
+                            Search
+                        </button>
+                        @if(request('search') || request('category') || request('age'))
+                            <a 
+                                href="{{ route('animals.index') }}" 
+                                class="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
+                            >
+                                <i class="fas fa-times mr-2"></i>
+                                Clear
+                            </a>
+                        @endif
+                    </div>
+                </form>
             </div>
 
             <!-- Animals Grid -->
