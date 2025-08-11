@@ -53,7 +53,7 @@ class ConsultationController extends Controller
             'status' => 'pending',
         ]);
 
-        return redirect()->route('consultation.create')
+        return redirect()->route('consultations.create')
             ->with('success', 'Your consultation request has been submitted successfully! We will contact you within 24 hours to confirm your appointment.');
     }
 }

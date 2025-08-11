@@ -33,6 +33,8 @@ Route::get('/consultations/create', [App\Http\Controllers\ConsultationController
 Route::post('/consultations', [App\Http\Controllers\ConsultationController::class, 'store'])->name('consultations.store');
 // Book Appointment page route
 Route::get('/appointments/create', [App\Http\Controllers\AppointmentController::class, 'create'])->name('appointments.create');
+// Store appointment form route
+Route::post('/appointments', [App\Http\Controllers\AppointmentController::class, 'store'])->name('appointments.store');
 
 // Adoption routes
 Route::get('/adoption/{animal}/create', [App\Http\Controllers\AdoptionRequestController::class, 'create'])->name('adoption.create');

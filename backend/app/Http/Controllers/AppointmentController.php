@@ -53,6 +53,8 @@ class AppointmentController extends Controller
             'symptoms' => $request->symptoms,
             'notes' => $request->notes,
             'status' => 'pending',
+            'urgency_level' => 1, // Default urgency level
+            'payment_status' => 'pending', // Default payment status
         ]);
 
         return redirect()->route('appointments.create')

@@ -25,11 +25,11 @@ Route::get('/superadmin/test', function () {
 // Superadmin login routes
 Route::post('/superadmin/login', [SuperAdminLoginController::class, 'store'])
     ->middleware('guest')
-    ->name('superadmin.login');
+    ->name('api.superadmin.login');
 
 Route::post('/superadmin/logout', [SuperAdminLoginController::class, 'destroy'])
     ->middleware('auth')
-    ->name('superadmin.logout');
+    ->name('api.superadmin.logout');
 
 // Animals API routes
 Route::get('/animals', function () {

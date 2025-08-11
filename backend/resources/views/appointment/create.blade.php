@@ -85,7 +85,7 @@
             @endif
 
             <!-- Form -->
-            <form action="{{ route('appointments.create') }}" method="POST" class="bg-white rounded-2xl shadow-lg p-8">
+            <form action="{{ route('appointments.store') }}" method="POST" class="bg-white rounded-2xl shadow-lg p-8">
                 @csrf
                 <!-- Owner Information -->
                 <div class="mb-8">
