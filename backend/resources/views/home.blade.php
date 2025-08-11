@@ -186,7 +186,7 @@
                         Get expert advice from our veterinary team. Perfect for general checkups, 
                         vaccinations, and health concerns.
                     </p>
-                    <a href="/medical-services" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                    <a href="{{ route('consultations.create') }}" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
                         Book Consultation
                     </a>
                 </div>
@@ -201,7 +201,7 @@
                         Book a specific time slot for surgery, emergency care, or specialized 
                         treatments with our medical team.
                     </p>
-                    <a href="/medical-services" class="inline-block bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
+                    <a href="{{ route('appointments.create') }}" class="inline-block bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
                         Book Appointment
                     </a>
                 </div>
@@ -336,7 +336,9 @@
                                 @foreach($story->stats as $stat)
                                 <div class="flex items-center space-x-2">
                                     <div class="w-2 h-2 bg-primary rounded-full"></div>
-                                    <span class="text-sm text-gray-700 font-medium">{{ $stat }}</span>
+                                    <span class="text-sm text-gray-700 font-medium">
+                                        {{ is_array($stat) ? ($stat['label'] ?? ($stat['description'] ?? json_encode($stat))) : $stat }}
+                                    </span>
                                 </div>
                                 @endforeach
                             </div>
