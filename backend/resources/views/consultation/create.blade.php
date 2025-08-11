@@ -74,7 +74,7 @@
             @endif
 
             <!-- Form -->
-            <form action="{{ route('consultation.store') }}" method="POST" class="bg-white rounded-2xl shadow-lg p-8">
+            <form action="{{ route('consultations.store') }}" method="POST" class="bg-white rounded-2xl shadow-lg p-8">
                 @csrf
                 
                 <!-- Client Information -->
